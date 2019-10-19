@@ -1,0 +1,63 @@
+.container {
+
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    color: white;
+    background: navy;
+    text-align: center;
+    font-size: 46px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: -1px 1px 0 black, 1px 1px 0 black, 1px -1px 0 black, -1px -1px 0 black;
+    padding-top: 14px;
+    border-radius: 10px;
+}
+
+article {
+    height: 370px;
+    width: 80%;
+    color: navy;
+    background: silver;
+    align-self: center;
+    margin: 30px;
+    padding: 20px; 
+    border: 1px;
+    border-style: ridge;
+    border-color: black;
+    border-radius: 10px;
+    font-size: 28px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: -1px 1px 0 white, 1px 1px 0 white , 1px -1px 0 white, -1px -1px 0 white;
+}
+
+#pwbox {
+    height: 220px;
+    width: 90%;
+    color: black;
+    background: white;
+    align-self: center;
+    margin: 0px;
+    padding: 15px;
+    border: 2px;
+    border-style: dashed;
+    border-color: navy; 
+    font-size: 20px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    color: white;
+    background: navy;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: -1px 1px 0 black, 1px 1px 0 black, 1px -1px 0 black, -1px -1px 0 black;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-radius: 10px;
+}

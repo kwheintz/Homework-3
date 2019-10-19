@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Random Password Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <header>Password Generator</header>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <article>
+          Your new password:
+          <hr />
+          <div class="row d-flex justify-content-center">
+            <div id="pwbox"></div>
+          </div>
+          <hr />
+        </article>
+      </div>
+      <div class="row" style="bottom-margin">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <button
+            type="button"
+            id="generate"
+            class="btn btn-primary btn-lg btn-block"
+            style="background-color: navy; border-color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+          >
+            Generate Password
+          </button>
+        </div>
+        <div class="col-md-3">
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg btn-block"
+            style="background-color: silver; border-color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+          >
+            Copy to Clipboard
+          </button>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <footer>© Copyright</footer>
+      </div>
+    </div>
+
+    <script>
+
+      var generate = document.querySelector("#generate");
+      var randompw = [];
+      var lengthok = false;
+      var charlist = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      //var lowerletters = "abcdefghijklmnopqrstuvwxyz";
+      //var upperletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      //var allnumbers = "0123456789";
+      var selectpw = 0;
+      var finalpw = "";
+      var displayvar = document.querySelector("#pwbox");
+
+
+      function clearText(){
+          displayvar.textContent=''
+
+      }
+      generate.addEventListener("click", start)
+
+       function start () {
+           // displayvar.textContent=''
+           
+           finalpw = null;
+           console.log(displayvar);
+           
+           var selectpwprompt = prompt("Enter a password length between 8 and 128 characters.");
+           clearText()
+          while (lengthok === false) {
+              if (selectpwprompt > 7 && selectpwprompt < 129) {
+                  alert("Password length selected: " + selectpwprompt + " characters");
+                  lengthok = true;
+              }
+              else {
+                  alert("Please enter a valid password length.");
+              }
+          }
+          //var confirmlower = confirm("Use lower case letters?");
+          //if (confirmlower) {
+          //
+          //}
+          //   else {
+          //        alert("Please enter a valid password length.");
+          //    }
+          //}
+          selectpw = selectpwprompt;
+          for (var i = 0; i < selectpw; i++) {
+              var selectchar = charlist.charAt(Math.floor(Math.random() * charlist.length));
+              randompw.push(selectchar);
+          }
+
+          finalpw = randompw.join('');
+
+          console.log(finalpw);
+
+          displayvar.textContent = finalpw;
+        
+
+      }
+    </script>
+  </body>
+</html>
