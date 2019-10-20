@@ -7,6 +7,7 @@ Below is a screenshot of the application:
 ![ScreenShot](PasswordGen-img.png)
 
 The application works as follows:
+
     -Open the application at https://kwheintz.github.io/Password-Generator/
     -Click the blue "Generate Password" to begin the process.
     -Enter a password length between 8 and 128 in the prompt.
