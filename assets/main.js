@@ -2,7 +2,6 @@
 
 var display = document.querySelector("#pwbox");
 var genBtn = document.querySelector('#generate').addEventListener("click", doGenPass)
-var textCopy = document.querySelector('#copytext').addEventListener("click", copyClipboard)
 
 // -------------GLOBAL VARS-----------------
 var charList = []; 
