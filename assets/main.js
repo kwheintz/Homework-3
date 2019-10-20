@@ -36,7 +36,7 @@ function charSelect () {
 
     var lowerselect = confirm("Include lower case letters?");
 
-    var upperselect = confirm("Include upper case letter?");
+    var upperselect = confirm("Include upper case letters?");
 
     var numbselect = confirm("Include numbers?");
 
@@ -66,7 +66,7 @@ function doGenPass () {
 
     var userPassLength = prompt("Enter a password length between 8 and 128 characters."); // save user's length to a var
     
-    if(userPassLength < 8 || userPassLength > 128) {  
+    if(userPassLength < 8 || userPassLength > 128 || isNaN(userPassLength)) {  
         alert("Please enter a valid password length.");
         /* Side note
             A function can call itself. So basically the following line will stop and restart the "doGenPass" function from the beginning
