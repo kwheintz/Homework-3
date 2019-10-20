@@ -2,6 +2,10 @@
 
 This application is for generating random passwords.  The password can be anywhere from 8 to 128 characters.  It will allow the user to choose whether the password will contain lowercase letters, uppercase letters, numbers, and/or special characters.
 
+
+Below is a screenshot of the application:
+PasswordGen-img.png
+
 The application works as follows:
     -Open the application at https://kwheintz.github.io/Password-Generator/
     -Click the blue "Generate Password" to begin the process.
