@@ -2,12 +2,15 @@
 
 var display = document.querySelector("#pwbox");
 var genBtn = document.querySelector('#generate').addEventListener("click", doGenPass)
+var textCopy = document.querySelector('#copytext').addEventListener("click", copyClipboard)
 
 // -------------GLOBAL VARS-----------------
-var charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; 
+var charList = []; 
+var charFinal;
 var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
 var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var allNum = "0123456789";
+var specialChars = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 var userPassLength;
 var finalPass;
 var generatedPass = [];
@@ -21,10 +24,12 @@ function init(){
     serPassLength= null
     finalPass= null
     generatedPass = []
+    charList = []
+    charFinal = null
 }
 
 // this function will display content to the screen
-function render (){
+function render () {
     display.textContent = finalPass;
 }
 
@@ -43,9 +48,32 @@ function doGenPass () {
         */
         return doGenPass()
     }
+    
+    var lowerselect = confirm("Include lower case letters?");
+
+    var upperselect = confirm("Include upper case letter?");
+
+    var numbselect = confirm("Include numbers?");
+
+    var specialselect = confirm("Include special characters?");
+
+    if(lowerselect) {
+        charList.push(lowerLetters);
+    } 
+    if(upperselect) {
+        charList.push(upperLetters);
+    } 
+    if(numbselect) {
+        charList.push(allNum);
+    } 
+    if(specialselect) {
+        charList.push(specialChars);
+    }
+
+    charFinal = charList.join('');
 
     for (var i = 0; i < userPassLength; i++) {
-        var userChar = charList.charAt(Math.floor(Math.random() * charList.length));
+        var userChar = charFinal.charAt(Math.floor(Math.random() * charFinal.length));
         generatedPass.push(userChar);
     }
     finalPass = generatedPass.join('');

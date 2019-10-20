@@ -16,7 +16,7 @@ header {
 }
 
 article {
-    height: 370px;
+    height: 400px;
     width: 80%;
     color: navy;
     background: silver;
@@ -33,7 +33,7 @@ article {
 }
 
 #pwbox {
-    height: 220px;
+    height: 240px;
     width: 90%;
     color: black;
     background: white;
