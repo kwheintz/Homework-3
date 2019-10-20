@@ -32,22 +32,8 @@ function render () {
     display.textContent = finalPass;
 }
 
-function doGenPass () {
-    
-    init() // run init to reset global vars 
+function charSelect () {
 
-    var userPassLength = prompt("Enter a password length between 8 and 128 characters."); // save user's length to a var
-    
-    if(userPassLength < 8 || userPassLength > 129) {  
-        alert("Please enter a valid password length.");
-        /* Side note
-            A function can call itself. So basically the following line will stop and restart the "doGenPass" function from the beginning
-            if the user doesn't make a valid length choice. This essentially makes a looping effect without using the 
-            traditional for loop 
-        */
-        return doGenPass()
-    }
-    
     var lowerselect = confirm("Include lower case letters?");
 
     var upperselect = confirm("Include upper case letter?");
@@ -68,6 +54,29 @@ function doGenPass () {
     if(specialselect) {
         charList.push(specialChars);
     }
+    if(lowerselect === false && upperselect === false && numbselect === false && specialselect === false) {
+        alert("You must select at least one character type.  Please try again.");
+        return charSelect()
+    }
+}
+
+function doGenPass () {
+    
+    init() // run init to reset global vars 
+
+    var userPassLength = prompt("Enter a password length between 8 and 128 characters."); // save user's length to a var
+    
+    if(userPassLength < 8 || userPassLength > 128) {  
+        alert("Please enter a valid password length.");
+        /* Side note
+            A function can call itself. So basically the following line will stop and restart the "doGenPass" function from the beginning
+            if the user doesn't make a valid length choice. This essentially makes a looping effect without using the 
+            traditional for loop 
+        */
+        return doGenPass()
+    }
+
+    charSelect()
 
     charFinal = charList.join('');
 
