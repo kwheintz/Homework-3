@@ -4,7 +4,7 @@ This application is for generating random passwords.  The password can be anywhe
 
 
 Below is a screenshot of the application:
-PasswordGen-img.png
+![ScreenShot]PasswordGen-img.png
 
 The application works as follows:
     -Open the application at https://kwheintz.github.io/Password-Generator/
